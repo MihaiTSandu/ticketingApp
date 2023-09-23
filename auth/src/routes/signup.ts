@@ -7,6 +7,7 @@ import {
 import { RequestValidationError } from '../errors/request-validation-error';
 import { User } from '../models/user';
 import { BadRequestError } from '../errors/bad-request-error';
+import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
@@ -38,6 +39,21 @@ router.post(
 
     const user = User.build({ email, password });
     await user.save();
+
+    // Generate jwt and store it on the session obj
+    const userJwt = jwt.sign(
+      {
+        id: user.id,
+        email: user.email,
+      },
+      process.env.JWT_KEY!
+    );
+
+    // Store token on session using cookies
+    // Storing session as an object because of typescript
+    req.session = {
+      jwt: userJwt,
+    };
 
     res.status(201).send(user);
   }
