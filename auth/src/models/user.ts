@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { Password } from '../services/password';
 
 interface UserAttrs {
   email: string;
@@ -29,6 +30,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+});
+
+// No arrow function because of this
+userSchema.pre('save', async function (done) {
+  // Mongoose isModified=true even on first save
+  if (this.isModified('password')) {
+    const hashedPassword = await Password.toHash(this.get('password'));
+    this.set('password', hashedPassword);
+  }
+  done();
 });
 
 userSchema.statics.build = (attrs: UserAttrs) => {
