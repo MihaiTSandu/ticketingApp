@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tickets -mongo
+      app: tickets-mongo
   template:
     metadata:
       labels:
-        app: tickets -mongo
+        app: tickets-mongo
     spec:
       containers:
         - name: tickets-mongo
@@ -22,7 +22,7 @@ metadata:
   name: tickets-mongo-srv
 spec:
   selector:
-    app: tickets -mongo
+    app: tickets-mongo
   ports:
     - name: db
       protocol: TCP
