@@ -1029,10 +1029,10 @@
   dependencies:
     sparse-bitfield "^3.0.3"
 
-"@mtstickets/common@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@mtstickets/common/-/common-1.0.4.tgz#3242cf20f4313574e8f6db052d91978def919173"
-  integrity sha512-hJjNLuA4esUcJiIEAsFdCbgT0TR/stDgPGHiiZDXu7RgfC91DDF4hPiimztXqOam3nXRwsAl4n/YrZNJyxZouw==
+"@mtstickets/common@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@mtstickets/common/-/common-1.0.5.tgz#bc7780adf5b04fbf7cc05a8c3b746f2bde91a4fa"
+  integrity sha512-ObUaR66qBulSD3qIDzb/Mr5vN59Xlpt2XdOO5rMnYyviNit4+zULJIComg7ZnzUNeO6sesll7mEx9KWIPIEvzg==
   dependencies:
     "@types/cookie-session" "^2.0.45"
     "@types/express" "^4.17.18"
