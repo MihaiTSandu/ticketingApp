@@ -18,18 +18,9 @@ stan.on('connect', async () => {
       id: '123',
       title: 'concert',
       price: 20,
+      userId: 'sdgasd',
     });
   } catch (err) {
     console.error(err);
   }
-
-  // const data = JSON.stringify({
-  //   id: '123',
-  //   title: 'concert',
-  //   price: 20,
-  // });
-
-  // stan.publish('ticket:created', data, () => {
-  //   console.log('Event published');
-  // });
 });
